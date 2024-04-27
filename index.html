@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript - dom</title>
+
+</head>
+
+<body>
+
+    <form action="" id="formContador">
+
+        <label for="">Numero inicial</label>
+        <input type="text" id="numero-inicial" value="0">
+        <br>
+        <label for="">Numero inicial</label>
+        <input type="text" id="numero-final" value="10">
+        <br>
+        <button id="iniciar">Iniciar</button>
+
+    </form>
+
+    <div id="output"></div>
+
+    <script>
+
+        let inputNumeroInicial = document.getElementById("numero-inicial");
+        let inputNumeroFinal = document.getElementById("numero-final");
+        let button = document.getElementById("iniciar");
+        let output = document.getElementById("output");
+        let formContador = document.getElementById("form-contador");
+
+        // inputNumeroInicial.addEventListener('input', function (event) {
+        //     output.textContent = event.target.value;
+        // })
+
+        formContador.addEventListener('submit', function(event) {
+            event.preventDefault();
+            console.log(inputNumeroInicial.value);
+            console.log(inputNumeroFinal.value);
+        })
+
+    </script>
+
+</body>
+
+</html>
