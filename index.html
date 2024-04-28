@@ -15,7 +15,7 @@
         <label for="">Numero inicial</label>
         <input type="text" id="numero-inicial" value="0">
         <br>
-        <label for="">Numero inicial</label>
+        <label for="">Numero final</label>
         <input type="text" id="numero-final" value="10">
         <br>
         <button id="iniciar">Iniciar</button>
@@ -30,16 +30,29 @@
         let inputNumeroFinal = document.getElementById("numero-final");
         let button = document.getElementById("iniciar");
         let output = document.getElementById("output");
-        let formContador = document.getElementById("form-contador");
+        let formContador = document.getElementById("formContador");
 
         // inputNumeroInicial.addEventListener('input', function (event) {
         //     output.textContent = event.target.value;
         // })
 
-        formContador.addEventListener('submit', function(event) {
+        formContador.addEventListener('submit', function (event) {
             event.preventDefault();
-            console.log(inputNumeroInicial.value);
-            console.log(inputNumeroFinal.value);
+            let numeroInicial = parseInt(inputNumeroInicial.value)
+            let numeroFinal = parseInt(inputNumeroFinal.value)
+
+            output.innerHtml = '';
+
+            let contador = numeroInicial
+
+            let interval = setInterval(function () {
+                console.log(contador++)
+
+                if (contador === 11) {
+                    clearInterval(interval);
+                }
+
+            }, 1000)
         })
 
     </script>
