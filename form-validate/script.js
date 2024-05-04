@@ -6,19 +6,19 @@ const elements = {
   senhaError: document.getElementById("senha-error")
 };
 
-function showEmailError(msg) {
+const showEmailError = (msg) => {
   elements.emailError.innerHTML = msg;
 }
 
-function showSenhaError(msg) {
+const showSenhaError = (msg) => {
   elements.senhaError.innerHTML = msg;
 }
 
-function showError(msg, elementId) {
+const showError = (msg, elementId) => {
   document.getElementById(elementId).innerHTML = msg;
 }
 
-elements.formLogin.addEventListener("submit", function (event) {
+elements.formLogin.addEventListener("submit", (event) => {
   let emailLength = elements.inputEmail.value.length;
   let senhaLength = elements.inputSenha.value.length;
   
@@ -38,7 +38,7 @@ elements.formLogin.addEventListener("submit", function (event) {
   }
 
   if(emailLength < 8) {
-    showError("Email precisa ter no minimo 3 caracteres!", "email-error")
+    showError("Email precisa ter no minimo 8 caracteres!", "email-error")
   }
 
   if (!senhaLength) {
