@@ -5,28 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validação</title>
+
+    <style>
+
+        .error {
+            color: red;
+        }
+
+    </style>
+
 </head>
 
 <body>
 
 
-    <form action="">
+    <form action="deubom.html" id="form-login">
         <div>
             <label for="">Email</label>
             <br>
-            <input type="text">
+            <input type="text" id="input-email">
+            <br>
+            <span class="error" id="email-error"></span>
         </div>
-    </form>
 
-    <form action="">
         <div>
             <label for="">Senha</label>
             <br>
-            <input type="text">
+            <input type="text" id="input-senha">
+            <br>
+            <span class="error" id="senha-error"></span>
         </div>
-    </form>
 
-    <form action="deubom.html">
         <div>
             <button>ENTRAR</button>
         </div>
