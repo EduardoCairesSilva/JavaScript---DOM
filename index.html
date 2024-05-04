@@ -46,7 +46,7 @@
             let contador = numeroInicial
 
             let interval = setInterval(function () {
-                console.log(contador++)
+                output.innerHTML += contador++ + "<br>"
 
                 if (contador === 11) {
                     clearInterval(interval);
@@ -54,6 +54,10 @@
 
             }, 1000)
         })
+
+        // for(i = numeroInicial; i <= numeroFinal; i++) {
+        //     output.innerHTML += i + "<br>"
+        // }
 
     </script>
 
