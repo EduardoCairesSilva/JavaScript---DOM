@@ -14,23 +14,42 @@ function showSenhaError(msg) {
   elements.senhaError.innerHTML = msg;
 }
 
+function showError(msg, elementId) {
+  document.getElementById(elementId).innerHTML = msg;
+}
+
 elements.formLogin.addEventListener("submit", function (event) {
   let emailLength = elements.inputEmail.value.length;
   let senhaLength = elements.inputSenha.value.length;
-  showEmailError('');
+  
+  showError('', 'email-error');
+  // showEmailError('');
     // emailError.innerHTML = "";
-  showSenhaError('');
+  showError('', 'senha-error');
+  // showSenhaError('');
   // senhaError.innerHTML = "";
 
   if (!emailLength) {
-    showEmailError("Email precisa ser preenchido")
+    showError("Email é um campo obrigatório!", "email-error")
+    // showEmailError("Email precisa ser preenchido")
     // emailError.innerHTML = "<span>Email precisa ser preenchido</span>";
     event.preventDefault();
+    return;
+  }
+
+  if(emailLength < 8) {
+    showError("Email precisa ter no minimo 3 caracteres!", "email-error")
   }
 
   if (!senhaLength) {
-    showSenhaError("Senha precisa ser preenchida")
+    showError("Senha é um campo obrigatório!", "senha-error")
+    // showSenhaError("Senha precisa ser preenchida")
     // senhaError.innerHTML = "<span>Senha precisa ser preenchida</span>";
     event.preventDefault();
+    return;
+  }
+
+  if(senhaLength < 8) {
+    showError("Senha precisa ter no minímo 8 caracteres!", 'senha-error')
   }
 });
