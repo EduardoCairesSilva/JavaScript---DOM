@@ -1,3 +1,3 @@
-import TaskItem from "./components/TaskItem.js";
+import App from './components/App.js';
 
-document.getElementById('app').innerHTML = TaskItem();
+document.getElementById('app').innerHTML = App();
