@@ -4,7 +4,7 @@ export function useEvent(eventName, eventFunction, eventParams = []) {
     window[eventFunction.name] = eventFunction;
 
             // onclick="clickLi(123)" 
-    return `on${eventName}="${eventFunction.name}(${eventParams})"`;
+    return `on${eventName}="${eventFunction.name}(event, ${eventParams})"`;
 };
 
 // TaskItem.js

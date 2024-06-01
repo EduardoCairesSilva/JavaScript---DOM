@@ -1,15 +1,17 @@
-import TaskItem from "./TaskItem.js";
+import TodoForm from "./TodoForm.js";
 import TaskList from "./TaskList.js";
 
 export default function App() {
 
-    let taskList = [
-        { completed: true, content: "task 1" },
-        { completed: false, content: "task 3" },
-        { completed: true, content: "task 2" },
-        { completed: false, content: "task 4" },
-    ]
+    let url = 'https://dummyjson.com/todos';
 
-    let tasks = TaskList({tasks: taskList})
-    return tasks;
+    return fetch(url)
+        .then(response => response.json())
+        .then(json => {
+            return `
+                ${TodoForm()}
+                <hr>
+                ${TaskList({ tasks: json.todos })}
+            `
+        })
 }
